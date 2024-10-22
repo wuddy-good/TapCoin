@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <h1>Налаштування</h1>
+    <form id="settingsForm">
+        <label for="timer_duration">Час таймера (в секундах):</label>
+        <input type="number" id="timer_duration" name="timer_duration" required>
+        <br>
+        <label for="coins_per_click">Кількість монет за клік:</label>
+        <input type="number" id="coins_per_click" name="coins_per_click" required>
+        <br>
+        <button type="submit">Зберегти налаштування</button>
+    </form>
+
+    <script>
+        document.getElementById('settingsForm').addEventListener('submit', async (event) => {
+            event.preventDefault(); 
+
+            const formData = new FormData(event.target);
+            const response = await fetch('/admin', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                alert('Налаштування збережено!');
+            } else {
+                alert('Помилка при збереженні налаштувань.');
+            }
+        });
+    </script>
+</body>
+</html>

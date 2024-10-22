@@ -1,0 +1,41 @@
+# Python
+*.py[cod]
+__pycache__/
+*.so
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Database
+*.db
+*.sqlite3
+
+# Flask instance folder
+instance/
+
+# Pytest
+.cache
+*.cover
+*.egg-info/
+.eggs/
+dist/
+build/
+coverage.xml
+*.log
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
